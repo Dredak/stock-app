@@ -30,7 +30,7 @@ const StockDetails = () => {
     <View style={styles.container}>
       <View style={styles.headerSection}>
         <Text style={styles.symbol}>{symbol}</Text>
-        <Text style={styles.currentPrice}>${c}</Text>
+        <Text style={styles.currentPrice}>${c || "N/A"}</Text>
       </View>
       <View style={styles.sectionWrapper}>
         <View style={styles.detailBox}>
@@ -38,28 +38,28 @@ const StockDetails = () => {
           <Text
             style={[styles.value, d >= 0 ? styles.positive : styles.negative]}
           >
-            {d} ({dp}%)
+            {d || "N/A"} ({dp || "N/A"}%)
           </Text>
         </View>
       </View>
       <View style={styles.sectionWrapper}>
         <View style={styles.detailBox}>
           <Text style={styles.label}>High</Text>
-          <Text style={styles.value}>${h}</Text>
+          <Text style={styles.value}>${h || "N/A"}</Text>
         </View>
         <View style={styles.detailBox}>
           <Text style={styles.label}>Low</Text>
-          <Text style={styles.value}>${l}</Text>
+          <Text style={styles.value}>${l || "N/A"}</Text>
         </View>
       </View>
       <View style={styles.sectionWrapper}>
         <View style={styles.detailBox}>
           <Text style={styles.label}>Open</Text>
-          <Text style={styles.value}>${o}</Text>
+          <Text style={styles.value}>${o || "N/A"}</Text>
         </View>
         <View style={styles.detailBox}>
           <Text style={styles.label}>Prev Close</Text>
-          <Text style={styles.value}>${pc}</Text>
+          <Text style={styles.value}>${pc || "N/A"}</Text>
         </View>
       </View>
       <View style={styles.spacer} />
